@@ -3,20 +3,7 @@
 <main role="main" class="flex-shrink-0">
 
   <div class="container">
-    <h1>Les pays en Asie </h1>
-    <?php
-            require_once 'inc/manager-db.php';
-            $continent = 'Asia';
-            $desPays = getCountriesByContinent($continent);
-         ?>
-       <code>
-         <!-- <?php var_dump($desPays[0]); ?> -->
-         <?php 
-          foreach ($desPays as $desPays) {
-            echo $desPays->Name. '<br />'; 
-     }
-         ?>
-      </code>
+    <h1>Découvrez les pays </h1>
     </div>
     <p></p>
     <section class="jumbotron text-center">
