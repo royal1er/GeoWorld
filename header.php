@@ -46,13 +46,17 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-             aria-expanded="false">Dropdown</a>
+             aria-expanded="false">Continents</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
+            <a class="dropdown-item" href="#" >Asia</a>
+            <a class="dropdown-item" href="#" >Europe</a>
+            <a class="dropdown-item" href="#">North America</a>
+            <a class="dropdown-item" href="africa.php">Africa</a>
+            <a class="dropdown-item" href="#"> Oceania</a>
+            <a class="dropdown-item" href="#"> Antartica</a>
+            <a class="dropdown-item" href="#"> South America</a>
           </div>
-        </li>
+        </li> 
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">

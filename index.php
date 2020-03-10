@@ -4,14 +4,18 @@
 
   <div class="container">
     <h1>Les pays en Asie </h1>
-    <div>
-        <?php
+    <?php
             require_once 'inc/manager-db.php';
             $continent = 'Asia';
             $desPays = getCountriesByContinent($continent);
          ?>
        <code>
-         <?php var_dump($desPays[0]); ?>
+         <!-- <?php var_dump($desPays[0]); ?> -->
+         <?php 
+          foreach ($desPays as $desPays) {
+            echo $desPays->Name. '<br />'; 
+     }
+         ?>
       </code>
     </div>
     <p></p>
