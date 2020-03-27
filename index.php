@@ -1,5 +1,4 @@
 <?php  require_once 'header.php'; ?>
-
 <main role="main" class="flex-shrink-0">
 
   <div class="container">
@@ -27,8 +26,27 @@
       </div>
     </section>
   </div>
-</main>
-
+  <!-- On affiche la liste des pays par continent si un continent est sélectionner -->
+  <div class="container">
+  <?php 
+  if(isset($_GET['Continent'])) 
+  { 
+    $selectedContinent = $_GET['Continent']; 
+    ?>
+    <h1>Les pays en <?php echo $selectedContinent ?> </h1>
+    <?php
+            require_once 'inc/manager-db.php';            
+            $desPays = getCountriesByContinent($selectedContinent);
+         ?>
+       <code>
+         <!-- <?php var_dump($desPays[0]); ?> -->
+         <?php 
+          foreach ($desPays as $desPays) {
+            echo $desPays->Name. '<br />'; 
+     }
+    }    ?>
+      </code>
+    </div>
 <?php
 require_once 'javascripts.php';
 require_once 'footer.php';
