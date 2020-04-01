@@ -52,13 +52,27 @@
             <?php
             require_once 'inc/manager-db.php';
             $lesContinents = getAllContinents(); // fonction permettant d'obtenir tous les continents
-            foreach ($lesContinents as $unContinent) 
+            foreach ($lesContinents as $unContinent)
             {
             echo '<a class="dropdown-item" href="index.php?Continent='.$unContinent->Continent .'">'. $unContinent->Continent.'</a>';
-            } 
+            }
           ?>
           </div>
-        </li> 
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+             aria-expanded="false">Langue</a>
+          <div class="dropdown-menu" aria-labelledby="dropdown01">
+          <!-- Boucle php permettant d'afficher dns un menu déroulant tous les continents -->
+            <?php
+            require_once 'inc/manager-db.php';
+            $lesLanguage = getAllLanguage(); // fonction permettant d'obtenir tous les languages
+            foreach ($lesLanguage as $unLanguage)
+            {
+            echo '<a class="dropdown-item" href="index.php?Language='.$unLanguage->Name .'">'. $unLanguage->Name.'</a>';
+            }
+          ?>
+          </div>
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">

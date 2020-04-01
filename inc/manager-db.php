@@ -66,3 +66,9 @@ $prep->execute();
 return $prep->fetchAll();
 
 }
+function getAllLanguage()
+{
+global $pdo;
+$query = 'SELECT DISTINCT Name FROM Language;';
+return $pdo->query($query)->fetchAll();
+}
