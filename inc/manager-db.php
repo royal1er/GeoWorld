@@ -18,6 +18,19 @@ function getCountriesByContinent($continent)
   return $prep->fetchAll();
 }
 
+function getLanguageByCountry($country)
+{
+  // pour utiliser la variable globale dans la fonction
+  global $pdo;
+  $query = "SELECT * FROM country, countrylanguage, language Where country.id =countrylanguage.idCountry AND countrylanguage.idLanguage = language.id AND country.Name = :country;";
+  $prep = $pdo->prepare($query);
+  $prep->bindValue(':country', $country, PDO::PARAM_STR);
+  $prep->execute();
+  var_dump($prep);
+  var_dump($country);
+  return $prep->fetchAll();
+}
+
 /** Obtenir la liste des pays
  * @return liste d'objets
  */
@@ -40,7 +53,7 @@ return $pdo->query($query)->fetchAll();
 
 /**
  * Obtenir les informations concernant un pays
- * 
+ *
  */
 function getInfosCountries($country)
 {
