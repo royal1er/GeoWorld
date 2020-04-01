@@ -8,6 +8,8 @@
 
   <!-- Bootstrap core CSS -->
   <link href="assets/bootstrap-4.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500&display=swap" rel="stylesheet">
+  
 
   <style>
     .bd-placeholder-img {
@@ -23,11 +25,12 @@
   </style>
   <!-- Custom styles for this template -->
   <link href="css/custom.css" rel="stylesheet">
+  <link href="fontawesome-free-5.13.0-web\css\all.css" rel="stylesheet">
 </head>
 <body class="d-flex flex-column h-100">
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="index.php">GeoWorld</a>
+    <a class="navbar-brand text-light" href="index.php">GeoWorld</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -36,16 +39,16 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link text-light" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link text-light" href="#">Link</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link text-light disabled" href="#">Disabled</a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+          <a class="nav-link text-light dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
              aria-expanded="false">Continents</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
           <!-- Boucle php permettant d'afficher dns un menu déroulant tous les continents -->
@@ -60,7 +63,7 @@
           </div>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+          <a class="nav-link dropdown-toggle text-light" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
              aria-expanded="false">Langue</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
           <!-- Boucle php permettant d'afficher dns un menu déroulant tous les continents -->
@@ -72,17 +75,18 @@
             echo '<a class="dropdown-item" href="index.php?Language='.$unLanguage->Name .'">'. $unLanguage->Name.'</a>';
             }
           ?>
+          
           </div>
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="login">Login</a>
+          <a class="nav-link text-light " href="login">Login</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="register">Register</a>
+          <a class="nav-link text-light" href="register">Register</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="todo-projet.php">
+          <a class="nav-link text-light " href="todo-projet.php">
             ProjetPPE-SLAM
           </a>
         </li>

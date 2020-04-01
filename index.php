@@ -1,7 +1,7 @@
 <?php  require_once 'header.php'; ?>
 <main role="main" class="flex-shrink-0">
 
-  <div class="container">
+  <!-- <div class="container">
     <h1>Découvrez les pays </h1>
     </div>
     <p></p>
@@ -25,7 +25,7 @@
 
       </div>
     </section>
-  </div>
+  </div> -->
   <!-- On affiche la liste des pays par continent si un continent est sélectionner -->
   <div class="container">
   <?php 
@@ -33,7 +33,7 @@
   { 
     $selectedContinent = $_GET['Continent']; 
     ?>
-    <h1>Les pays en <?php echo $selectedContinent ?> </h1>
+    <h1 class=" text-center mb-3">Les pays en <?php echo $selectedContinent ?> </h1>
     <?php
             require_once 'inc/manager-db.php';            
             $desPays = getCountriesByContinent($selectedContinent);
@@ -41,12 +41,17 @@
        <code>
          <!-- <?php var_dump($desPays[0]); ?> -->
          <?php 
-          foreach ($desPays as $desPays) { 
-            echo '<a href="infos.php?Name='.$desPays->Name.'">'.$desPays->Name.'</a> <br />'; 
+         echo '<div class="row">';
+          foreach ($desPays as $desPays) { ?>
+               
+            <?php echo '<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-3 ">
+                              <a class="text-light " href="infos.php?Name='.$desPays->Name.'"><button type="button" class="btn btn-info w-100 h-100 shadow p-3 mb-5 rounded-lg">'.$desPays->Name.'</button></a>
+                        </div>'; 
      }
+     echo '</div>';
     }    ?>
       </code>
-    </div>
+  </div>
 <?php
 require_once 'javascripts.php';
 require_once 'footer.php';

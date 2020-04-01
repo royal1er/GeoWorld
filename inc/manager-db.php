@@ -26,8 +26,6 @@ function getLanguageByCountry($country)
   $prep = $pdo->prepare($query);
   $prep->bindValue(':country', $country, PDO::PARAM_STR);
   $prep->execute();
-  var_dump($prep);
-  var_dump($country);
   return $prep->fetchAll();
 }
 
@@ -47,7 +45,7 @@ function getAllCountries()
 function getAllContinents()
 {
 global $pdo;
-$query = 'SELECT DISTINCT Continent FROM Country;';
+$query = 'SELECT DISTINCT Continent FROM Country Order By Continent;';
 return $pdo->query($query)->fetchAll();
 }
 
@@ -69,6 +67,16 @@ return $prep->fetchAll();
 function getAllLanguage()
 {
 global $pdo;
-$query = 'SELECT DISTINCT Name FROM Language;';
+$query = 'SELECT DISTINCT Name FROM Language ORDER By Name;';
 return $pdo->query($query)->fetchAll();
+}
+
+function getCitiesByCountry($country){
+global $pdo;
+$query = 'SELECT c.Name, c.District, c.Population FROM city c INNER JOIN country co ON c.idCountry = co.id
+WHERE co.Name = :country;';
+$prep = $pdo->prepare($query);
+$prep->bindValue(':country', $country, PDO::PARAM_STR);
+$prep->execute();
+return $prep->fetchAll();
 }

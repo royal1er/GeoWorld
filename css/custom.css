@@ -1,6 +1,21 @@
 body {
+  font-family: 'Baloo Da 2',
+  cursive;
   padding-top: 5rem;
+  background-color: rgba(205, 241, 241, 0.76);
 }
+a .btn{
+  background: #17a2b8;
+}
+a .btn:hover{
+  background: #bd7d52;
+  border-color: #bd7d52;
+}
+p .btn:hover{
+  background: #ff6600;
+  border-color: #bd7d52;
+}
+
 th {
   color: red;
   text-align: center;
