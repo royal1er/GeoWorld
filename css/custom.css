@@ -1,6 +1,27 @@
 body {
   padding-top: 5rem;
 }
+th {
+  color: red;
+  text-align: center;
+  border: 1px solid rgb(190, 190, 190);
+  padding: 10px;
+}
+
+td {
+  color: black;
+  text-align: center;
+  border: 1px solid rgb(190, 190, 190);
+  padding: 10px;
+
+}
+table {
+  border-collapse: collapse;
+  border: 2px solid rgb(200, 200, 200);
+  letter-spacing: 1px;
+  font-family: sans-serif;
+  font-size: .8rem;
+}
 
 .footer > .container {
   padding-right: 15px;
@@ -16,7 +37,7 @@ code {
   height: auto;
   position:relative;
   border:1px solid #BBB;
- // background:#eee;
+  background:#eee;
 }
 
 .ribbon {

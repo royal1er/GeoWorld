@@ -37,3 +37,19 @@ global $pdo;
 $query = 'SELECT DISTINCT Continent FROM Country;';
 return $pdo->query($query)->fetchAll();
 }
+
+/**
+ * Obtenir les informations concernant un pays
+ * 
+ */
+function getInfosCountries($country)
+{
+global $pdo;
+$query = 'SELECT Continent,Region,SurfaceArea,IndepYear,Population,LifeExpectancy,GNP,GNPOld,LocalName, GovernmentForm,HeadOfState,Capital FROM country
+WHERE Name = :country;';
+$prep = $pdo->prepare($query);
+$prep->bindValue(':country', $country, PDO::PARAM_STR);
+$prep->execute();
+return $prep->fetchAll();
+
+}

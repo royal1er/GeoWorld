@@ -41,8 +41,8 @@
        <code>
          <!-- <?php var_dump($desPays[0]); ?> -->
          <?php 
-          foreach ($desPays as $desPays) {
-            echo $desPays->Name. '<br />'; 
+          foreach ($desPays as $desPays) { 
+            echo '<a href="infos.php?Name='.$desPays->Name.'">'.$desPays->Name.'</a> <br />'; 
      }
     }    ?>
       </code>
