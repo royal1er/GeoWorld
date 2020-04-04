@@ -4,9 +4,13 @@ body {
   padding-top: 5rem;
   background-color: rgba(205, 241, 241, 0.76);
 }
+.carousel{
+  margin-top: -2%;
+}
 a .btn{
   background: #17a2b8;
 }
+
 a .btn:hover{
   background: #bd7d52;
   border-color: #bd7d52;

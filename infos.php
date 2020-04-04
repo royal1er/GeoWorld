@@ -1,13 +1,15 @@
 <?php  require_once 'header.php'; ?>
 <div class="container">
-<a href="javascript:history.back(1)"><button type="button" class="btn btn-info"><i class="fas fa-undo-alt"></i></button></a> 
+<div class="row justify-content-between">
+<a href="javascript:history.back(1)"><button type="button" class="btn btn-info"><i class="fas fa-undo-alt"></i> Retour</button></a> <i class="fas fa-book-reader"></i>
+ </div>
   <?php
   if(isset($_GET['Name']))
   {
 
-    $selectedCountry= $_GET['Name'];
+    $selectedCountry = $_GET['Name'];
     ?>
-    <h1 class=" text-center"><i class="fas fa-book-reader"></i></i>&nbsp <?php echo $selectedCountry ?> &nbsp<i class="fas fa-book-reader"></i></i></h1>
+    <h1 class=" text-center"><?php echo $selectedCountry ?></h1>
     <?php
             require_once 'inc/manager-db.php';
             $desInfos = getInfosCountries($selectedCountry);
@@ -76,6 +78,7 @@
                   <!-- Bouton affichant les villes dans le pays -->
                   <p class=" align-content-center">
                   <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#CitiesView" aria-expanded="false" aria-controls="collapseExample">Afficher / Masquer les villes</button></p>
+                
                   <!-- Bouton affichant les villes dans le pays -->
                       <div class="collapse" id="CitiesView">
                         <table class=" table mt-3 shadow-lg p-3 mb-5">
