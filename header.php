@@ -9,7 +9,7 @@
   <!-- Bootstrap core CSS -->
   <link href="assets/bootstrap-4.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500&display=swap" rel="stylesheet">
-  
+
 
   <style>
     .bd-placeholder-img {
@@ -29,7 +29,7 @@
 </head>
 <body class="d-flex flex-column h-100">
 <header>
-  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <nav class="navbar navbar-expand-xl|lg|md|sm navbar-dark bg-dark fixed-top">
     <a class="navbar-brand" href="index.php">GeoWorld</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -77,10 +77,35 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+        <input  id="search-country" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        <div class="col-sm-10 bg-light">
+          <div id="result-search"></div>
+        </div>
       </form>
+      <script>
+      $(document).ready(function(){
+        $('#search-country').keyup(function(){
+           $('#result-search').html('');
+          var utilisateur = $(this).val();
+          if(utilisateur != ""){
+            $.ajax({
+              type: 'GET',
+              url: 'inc/recherche_pays.php',
+              data: 'country=' + encodeURIComponent(utilisateur),
+              success: function(data){
+                if(data != ""){
+                  $('#result-search').append(data);
+                }else{
+                  document.getElementById('result-search').innerHTML = "<div style='font-size: 20px; text-align: center; margin-top: 10px'>Aucun utilisateur</div>"
+                  console.log(data);
+                }
+              }
+            });
+          }
+        });
+      });
+      </script>
     </div>
   </nav>
 </header>
-
