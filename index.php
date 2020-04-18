@@ -74,9 +74,6 @@ if(!isset($_SESSION['nom'])){
                         </div>';
      }
      echo '</div>';
-     foreach ($desPays as $clef => $valeur){
-             echo $clef. ' => ' .$valeur. '<br>';
-         }
     }    ?>
       </code>
   </div>
