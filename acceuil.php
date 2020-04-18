@@ -1,34 +1,14 @@
 <?php
-if(session_id() == ""){
-  session_start();
-}
-require_once("inc/manager-db.php");
-require_once ("inc/connect-db.php");
 include("header.php");
-global $pdo;
-$estConnecte = estConnecte();
-if(!isset($_REQUEST['uc']) || !$estConnecte){
-   $_REQUEST['uc'] = 'connexion';
-}
-$uc = $_REQUEST['uc'];
-switch($uc){
-case 'connexion':{
-  include("controleurs/c_connexion.php");break;
-}
-case 'request':{
-  include("controleurs/c_request.php");break;
-}
-}
-if(!isset($_SESSION['nom'])){
-  include("acceuil.php");
-}
 ?>
 
-<!-- <main role="main" class="flex-shrink-0"> -->
+
+<main role="main" class="flex-shrink-0">
   <!-- routage vers le controleur connexion -->
   <!-- Slides -->
-<!-- <?php if(!isset($_GET['Continent'])) {  ?> -->
-<!-- <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+  <main role="main" class="flex-shrink-0">
+<?php if(!isset($_GET['Continent'])) {  ?>
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img src="images\w_s1.jpg" class="d-block w-100" alt="...">
@@ -48,9 +28,9 @@ if(!isset($_SESSION['nom'])){
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div> -->
-  <!-- <?php }
-  ?> -->
+</div>
+  <?php }
+  ?>
   <!-- Fin slides -->
   <!-- On affiche la liste des pays par continent si un continent est sélectionner -->
   <div class="container">
@@ -74,9 +54,6 @@ if(!isset($_SESSION['nom'])){
                         </div>';
      }
      echo '</div>';
-     foreach ($desPays as $clef => $valeur){
-             echo $clef. ' => ' .$valeur. '<br>';
-         }
     }    ?>
       </code>
   </div>

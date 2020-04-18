@@ -1,5 +1,4 @@
 <?php
-  session_start();
   require_once 'connect-db.php';
 
   if(isset($_GET['country'])){

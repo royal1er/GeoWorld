@@ -1,3 +1,8 @@
+<?php
+if(!isset($_SESSION)){
+    session_start();
+}
+?>
 <!doctype html>
 <html lang="fr" class="h-100">
 <head>
@@ -9,6 +14,7 @@
   <!-- Bootstrap core CSS -->
   <link href="assets/bootstrap-4.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500&display=swap" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
   <style>
@@ -29,8 +35,8 @@
 </head>
 <body class="d-flex flex-column h-100">
 <header>
-  <nav class="navbar navbar-expand-xl|lg|md|sm navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="index.php">GeoWorld</a>
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="acceuil.php">GeoWorld</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -52,13 +58,12 @@
              aria-expanded="false">Continents</a>
           <div class="dropdown-menu" aria-labelledby="dropdown01">
           <!-- Boucle php permettant d'afficher dns un menu déroulant tous les continents -->
-            <?php
+          <?php
             require_once 'inc/manager-db.php';
             $lesContinents = getAllContinents(); // fonction permettant d'obtenir tous les continents
-            foreach ($lesContinents as $unContinent)
-            {
+            foreach ($lesContinents as $unContinent){
             echo '<a class="dropdown-item" href="index.php?Continent='.$unContinent->Continent .'">'. $unContinent->Continent.'</a>';
-            }
+          };
           ?>
           </div>
         </li>
@@ -75,6 +80,22 @@
             ProjetPPE-SLAM
           </a>
         </li>
+        <?php
+        if(isset($_SESSION['nom'])){
+          ?>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <?php echo "Bienvenue ".$_SESSION['nom']."  ".$_SESSION['prenom']."  "?>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="#">Mon profil</a>
+              <a class="dropdown-item" href="request.php">Mes requêtes</a>
+              <a class="dropdown-item" href="index.php?uc=connexion&action=deconnexion">Déconnecter</a>
+            </div>
+          </li>
+        <?php
+      }
+      ?>
       </ul>
       <form class="form-inline my-2 my-lg-0">
         <input  id="search-country" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -97,7 +118,7 @@
                 if(data != ""){
                   $('#result-search').append(data);
                 }else{
-                  document.getElementById('result-search').innerHTML = "<div style='font-size: 20px; text-align: center; margin-top: 10px'>Aucun utilisateur</div>"
+                  document.getElementById('result-search').innerHTML = "<div style='font-size: 20px; text-align: center; margin-top: 10px'>Aucun pays trouvés</div>"
                   console.log(data);
                 }
               }
