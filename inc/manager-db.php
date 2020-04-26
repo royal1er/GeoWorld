@@ -138,6 +138,9 @@ function connecter($id,$nom,$prenom){
  */
 function deconnecter(){
   if(session_id() != ""){
+    $_SESSION = array();
+    $_SESSION['nom'] = '';
+    $_SESSION['prenom'] = '';
     session_destroy();
     include("vues/deconnexion.php");
   }else{

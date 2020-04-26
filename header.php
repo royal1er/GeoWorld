@@ -82,6 +82,7 @@ if(!isset($_SESSION)){
         </li>
         <?php
         if(isset($_SESSION['nom'])){
+          if($_SESSION['nom'] != ''){
           ?>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -95,6 +96,7 @@ if(!isset($_SESSION)){
           </li>
         <?php
       }
+    }
       ?>
       </ul>
       <form class="form-inline my-2 my-lg-0">
