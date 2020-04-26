@@ -9,7 +9,7 @@ switch($action){
 	}
   case 'deconnexion':{
     deconnecter();
-		include("acceuil.php");
+		include("accueil.php");
 		break;
   }
 	case 'valideConnexion' :{
@@ -28,13 +28,13 @@ if (isset($_REQUEST["connexion"])){
 				$prenom = $visiteur[0]-> prenom;
 				$id = $visiteur[0]-> id;
 				connecter($id, $nom, $prenom);
-				include("acceuil.php");
+				include("accueil.php");
 			}
       break;
 }
 }
 	default :{
-		include("acceuil.php");
+		include("accueil.php");
 		break;
 	}
 }

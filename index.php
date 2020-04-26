@@ -20,7 +20,7 @@ case 'request':{
 }
 }
 if(!isset($_SESSION['nom'])){
-  include("acceuil.php");
+  include("accueil.php");
 }
 ?>
 
