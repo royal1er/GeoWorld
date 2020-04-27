@@ -12,6 +12,23 @@ switch($action){
 		include("accueil.php");
 		break;
   }
+	case 'inscription':{
+		$login = $_REQUEST['login'];
+		$mdp = $_REQUEST['password'];
+		$nom = $_REQUEST['nom'];
+		$prenom = $_REQUEST['prenom'];
+		$role = $_REQUEST['role'];
+		if(isset($_REQUEST['role'])){
+			$role = true;
+			inscrire($nom,$prenom,$login,$mdp,$role);
+			connecter($login, $nom, $prenom);
+			include("accueil.php");
+		}else{
+			$role = false;
+			inscrire($nom,$prenom,$login,$mdp,$role);
+		}
+		break;
+  }
 	case 'valideConnexion' :{
 	//Connexion d'un visiteur
 if (isset($_REQUEST["connexion"])){

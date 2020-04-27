@@ -181,6 +181,13 @@ if(($count) != 0){
 include ("vues\successUpdate.php");
   }
 }
+
+function inscrire($nom,$prenom,$id,$mdp,$etudiant){
+  global $pdo;
+   $sql = "insert into user (Name,FirstName,login,password,student) VALUES ('$nom', '$prenom', '$id','$mdp','$etudiant')";
+   $query= $pdo->prepare($sql);
+   $count = $query->execute();
+}
 // function getCountriesByContinent($continent)
 // {
 //   // pour utiliser la variable globale dans la fonction
