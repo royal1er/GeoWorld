@@ -4,6 +4,7 @@ if(!isset($_SESSION)){
     session_start();
 }
 require_once 'inc/manager-db.php';
+$Country = $_GET['Name'];
 $desInfos = getInfosCountries($Country);
 foreach ($desInfos as $desInfos) {
 $id = $desInfos->id;
