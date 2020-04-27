@@ -70,10 +70,10 @@ if(!isset($_SESSION)){
       </ul>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="login">Login</a>
+          <a class="nav-link" href="login">Connexion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="register">Register</a>
+          <a class="nav-link" href="register">Inscription</a>
         </li>
         <li class="nav-item">
           <a class="nav-link " href="todo-projet.php">

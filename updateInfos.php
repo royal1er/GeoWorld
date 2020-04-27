@@ -4,8 +4,6 @@ if(!isset($_SESSION)){
     session_start();
 }
 require_once 'inc/manager-db.php';
-$selectedContinent = $_GET['Continent'];
-$Country = $_GET['Name'];
 $desInfos = getInfosCountries($Country);
 foreach ($desInfos as $desInfos) {
 $id = $desInfos->id;
@@ -55,7 +53,7 @@ $id = $desInfos->id;
     </div>
   </div>
   <div class="row justify-content-center">
-    <button type="submit" class=" btn btn-success">Enregistrer</button>
+    <button type="submit" class=" btn btn-success">Enregistrer les modifications</button>
   </div>
 </form>
 <?php
