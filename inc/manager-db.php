@@ -56,7 +56,7 @@ return $pdo->query($query)->fetchAll();
 function getInfosCountries($country)
 {
 global $pdo;
-$query = 'SELECT Continent,Region,SurfaceArea,IndepYear,Population,LifeExpectancy,GNP,GNPOld,LocalName, GovernmentForm,HeadOfState,Capital FROM country
+$query = 'SELECT id,Continent,Region,SurfaceArea,IndepYear,Population,LifeExpectancy,GNP,GNPOld,LocalName, GovernmentForm,HeadOfState,Capital FROM country
 WHERE Name = :country;';
 $prep = $pdo->prepare($query);
 $prep->bindValue(':country', $country, PDO::PARAM_STR);
@@ -169,6 +169,17 @@ $prep = $pdo->prepare($query);
 $prep->execute();
 return $prep->fetchAll();
 
+}
+
+function updateInfos($id,$region,$SurfaceArea,$IndepYear,$Population,$LifeExpectancy,$GNP,$GovernmentForm,$HeadOfState){
+  global $pdo;
+   $sql = "UPDATE country SET Region='$region', SurfaceArea='$SurfaceArea', IndepYear='$IndepYear', Population='$Population', LifeExpectancy='$LifeExpectancy',
+   GNP='$GNP' ,GovernmentForm='$GovernmentForm',HeadOfState='$HeadOfState' WHERE id=$id";
+$query= $pdo->prepare($sql);
+$count = $query->execute();
+if(($count) != 0){
+include ("vues\successUpdate.php");
+  }
 }
 // function getCountriesByContinent($continent)
 // {

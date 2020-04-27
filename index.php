@@ -18,6 +18,9 @@ case 'connexion':{
 case 'request':{
   include("controleurs/c_request.php");break;
 }
+case 'update':{
+  include("controleurs/c_update.php");break;
+}
 }
 if(!isset($_SESSION['nom'])){
   include("accueil.php");

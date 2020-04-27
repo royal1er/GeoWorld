@@ -44,7 +44,7 @@ if(!isset($_SESSION)){
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
+        <!-- <li class="nav-item active">
           <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
@@ -52,7 +52,7 @@ if(!isset($_SESSION)){
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
+        </li> -->
        <li class="nav-item dropdown">
           <a class="nav-link text-light dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
              aria-expanded="false">Continents</a>
@@ -90,6 +90,7 @@ if(!isset($_SESSION)){
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Mon profil</a>
+              <a class="dropdown-item" href="updateContinent.php">Mettre à jour des données</a>
               <a class="dropdown-item" href="request.php">Mes requêtes</a>
               <a class="dropdown-item" href="index.php?uc=connexion&action=deconnexion">Déconnecter</a>
             </div>

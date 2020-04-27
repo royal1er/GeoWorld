@@ -2,8 +2,6 @@
 include("header.php");
 ?>
 
-
-<main role="main" class="flex-shrink-0">
   <!-- routage vers le controleur connexion -->
   <!-- Slides -->
   <main role="main" class="flex-shrink-0">
