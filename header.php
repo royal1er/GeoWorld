@@ -9,7 +9,7 @@ if(!isset($_SESSION)){
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <title>Homepage : Bootstrap 4</title>
+  <title>GeoWorld</title>
 
   <!-- Bootstrap core CSS -->
   <link href="assets/bootstrap-4.2.1-dist/css/bootstrap.min.css" rel="stylesheet">

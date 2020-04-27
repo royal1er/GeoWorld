@@ -173,8 +173,16 @@ return $prep->fetchAll();
 
 function updateInfos($id,$region,$SurfaceArea,$IndepYear,$Population,$LifeExpectancy,$GNP,$GovernmentForm,$HeadOfState){
   global $pdo;
-   $sql = "UPDATE country SET Region='$region', SurfaceArea='$SurfaceArea', IndepYear='$IndepYear', Population='$Population', LifeExpectancy='$LifeExpectancy',
-   GNP='$GNP' ,GovernmentForm='$GovernmentForm',HeadOfState='$HeadOfState' WHERE id=$id";
+
+  //IndepYear vide
+if($IndepYear == ""){
+  $sql = "UPDATE country SET Region='$region',SurfaceArea='$SurfaceArea', Population='$Population', LifeExpectancy='$LifeExpectancy',
+GNP='$GNP' ,GovernmentForm='$GovernmentForm',HeadOfState='$HeadOfState' WHERE id=$id";
+}
+else
+{$sql = "UPDATE country SET Region='$region', SurfaceArea='$SurfaceArea', IndepYear='$IndepYear', Population='$Population', LifeExpectancy='$LifeExpectancy',
+GNP='$GNP' ,GovernmentForm='$GovernmentForm',HeadOfState='$HeadOfState' WHERE id=$id";
+}
 $query= $pdo->prepare($sql);
 $count = $query->execute();
 if(($count) != 0){

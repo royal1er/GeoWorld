@@ -55,7 +55,7 @@
                         <td><?php echo $desInfos->Population ?></td>
                     </tr>
                      <tr class="table">
-                        <td><i class="fas fa-heartbeat"></i>&nbsp Espérence de vie</td>
+                        <td><i class="fas fa-heartbeat"></i>&nbsp Espérance de vie</td>
                         <td><?php echo $desInfos->LifeExpectancy ?> %</td>
                     </tr>
                      <tr class="table bg-info">
