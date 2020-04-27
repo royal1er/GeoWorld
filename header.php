@@ -106,11 +106,12 @@ if(!isset($_SESSION)){
     }
       ?>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input  id="search-country" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        <div class="col-sm-10 bg-light">
-          <div id="result-search"></div>
+      <form class="form-inline my-2 my-lg-0 ">
+        <input  id="search-country" class="form-control mr-sm-2" type="text" placeholder="Rechercher" aria-label="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
+        <div class="row ml-3 search-bar shadow-lg">
+          <div> 
+              <div id="result-search"></div>
         </div>
       </form>
       <script>
@@ -138,4 +139,5 @@ if(!isset($_SESSION)){
       </script>
     </div>
   </nav>
+</div>
 </header>

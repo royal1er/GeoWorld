@@ -19,7 +19,18 @@ p .btn:hover{
   background: #ff6600;
   border-color: #bd7d52;
 }
-
+.search-bar{
+  position: absolute;
+  top: 100%;
+  background-color: rgb(255, 255, 255);
+  z-index: 1000;
+  background-clip: padding-box;
+  
+}
+.alert{
+  position: absolute;
+  z-index: 1000;
+}
 th {
   color: red;
   text-align: center;
