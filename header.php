@@ -69,12 +69,18 @@ if(!isset($_SESSION)){
         </li>
       </ul>
       <ul class="navbar-nav ml-auto">
+        <?php
+        if(empty($_SESSION['nom'])){
+          ?>
         <li class="nav-item">
           <a class="nav-link" href="login">Connexion</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="register">Inscription</a>
         </li>
+        <?php
+      }
+      ?>
         <li class="nav-item">
           <a class="nav-link " href="todo-projet.php">
             ProjetPPE-SLAM

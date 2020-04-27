@@ -26,7 +26,7 @@
         <option value="0">Enseignant</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-danger">Connexion</button>
+  <button type="submit" class="btn btn-danger">S'inscrire</button>
 </form>
 </div>
 </div>
