@@ -19,13 +19,12 @@
     <label for="exampleInputFName">Prénom</label>
     <input type="text" class="form-control" id="prenom" name="prenom">
   </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" value="Enseignant" name="role">
-    <label class="form-check-label" for="exampleCheck1">Enseignant</label>
-  </div>
-  <div class="form-group form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Eleve</label>
+  <div class="form-group">
+  <label for="exampleInputRole">Role</label>
+   <select id="inputState" class="form-control" name="role">
+        <option value="1">Etudiant</option>
+        <option value="0">Enseignant</option>
+    </select>
   </div>
   <button type="submit" class="btn btn-danger">Connexion</button>
 </form>
