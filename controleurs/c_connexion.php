@@ -18,15 +18,9 @@ switch($action){
 		$nom = $_REQUEST['nom'];
 		$prenom = $_REQUEST['prenom'];
 		$role = $_REQUEST['role'];
-		if(isset($_REQUEST['role'])){
-			$role = true;
-			inscrire($nom,$prenom,$login,$mdp,$role);
-			connecter($login, $nom, $prenom);
-			include("accueil.php");
-		}else{
-			$role = false;
-			inscrire($nom,$prenom,$login,$mdp,$role);
-		}
+		inscrire($nom,$prenom,$login,$mdp,$role);
+		connecter($login, $nom, $prenom);
+		include("accueil.php");
 		break;
   }
 	case 'valideConnexion' :{
