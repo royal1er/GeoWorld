@@ -132,6 +132,17 @@ function connecter($id,$nom,$prenom){
 	$_SESSION['prenom']= $prenom;
 }
 
+function getRole($id){
+  global $pdo;
+  $query = "SELECT student FROM user Where user.id='.$id.'";
+  $req = $pdo->query($query)->fetchAll();
+  $role = "";
+  if($req == 1){
+    echo $role = "Collaborateur";
+  }else{
+    echo $role = "Enseignant";
+  }
+}
 
 /**
  * Détruit la session active

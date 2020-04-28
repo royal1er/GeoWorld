@@ -95,7 +95,7 @@ if(!isset($_SESSION)){
               <?php echo "Bienvenue ".$_SESSION['nom']."  ".$_SESSION['prenom']."  "?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Mon profil</a>
+              <a class="dropdown-item" href="v_profil.php">Mon profil</a>
               <a class="dropdown-item" href="updateContinent.php">Mettre à jour des données</a>
               <a class="dropdown-item" href="request.php">Mes requêtes</a>
               <a class="dropdown-item" href="index.php?uc=connexion&action=deconnexion">Déconnecter</a>
@@ -110,7 +110,7 @@ if(!isset($_SESSION)){
         <input  id="search-country" class="form-control mr-sm-2" type="text" placeholder="Rechercher" aria-label="Search">
         <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button>
         <div class="row ml-3 search-bar shadow-lg">
-          <div> 
+          <div>
               <div id="result-search"></div>
         </div>
       </form>
