@@ -108,6 +108,14 @@ function getInfosVisiteur($login, $password){
   return $ligne;
 }
 
+function getInfosUserById($id){
+  global $pdo;
+  $req = $pdo->prepare("select user.name as nom, user.FirstName as prenom, user.login from user
+  where user.id='$id'");
+  $req->execute();
+  $ligne = $req->fetchAll();
+  return $ligne;
+}
 // function getInfosVisiteur($login, $password){
 //   global $pdo;
 //   $query = 'SELECT user.id AS id, user.name AS nom, user.FirstName AS prenom FROM user
@@ -198,6 +206,37 @@ $query= $pdo->prepare($sql);
 $count = $query->execute();
 if(($count) != 0){
 include ("vues\successUpdate.php");
+  }
+}
+
+function updateUser($id,$name,$FirstName,$login){
+  global $pdo;
+  $sql = "update user set name='$name', FirstName='$FirstName', login='$login' WHERE id='$id'";
+$query= $pdo->prepare($sql);
+$count = $query->execute();
+if(($count) != 0){
+  include("vues\successUpdate.php");
+}else{
+  include("vues\errorUpdate.php");
+}
+}
+function getPassword($id){
+  global $pdo;
+  $req = $pdo->prepare("select user.password from user where user.id='$id'");
+  $req->execute();
+  $ligne = $req->fetchAll();
+  return $ligne;
+}
+
+function setPassword($id, $mpd){
+  global $pdo;
+  $sql = "update user set password='$mpd' WHERE id='$id'";
+  $query= $pdo->prepare($sql);
+  $count = $query->execute();
+  if(($count) != 0){
+    include("vues\successUpdate.php");
+  }else{
+    include("vues\errorUpdate.php");
   }
 }
 
