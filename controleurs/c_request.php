@@ -10,14 +10,22 @@ switch($action){
 	}
 	case 'PaysLanguage' :{
 		$langue = $_REQUEST['Langue'];
-		if ($langue != ""){
+		$nb = verifLangue($langue);
+		foreach ($nb as $nb) {
+			$listpays = $nb->nbpays;
+		if($listpays == 0){
+			include("vues/erreurReq.php");
+			include('request.php');
+		}
+		else if ($langue != ""){
 			$lesPays = PaysLangue($langue);
 			include('vues/v_request.php');
 		}else {
 			include("vues/erreurReq.php");
 			include('request.php');
 		}
-		
+	}
+
 }
 }
 ?>
