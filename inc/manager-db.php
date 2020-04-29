@@ -250,6 +250,17 @@ function inscrire($nom,$prenom,$id,$mdp,$etudiant){
    $query= $pdo->prepare($sql);
    $count = $query->execute();
 }
+
+function PaysLangue($langue){
+  global $pdo;
+  $query = "SELECT c.Name as PaysName FROM country c INNER JOIN  countrylanguage cl ON c.id = cl.idCountry 
+INNER JOIN language l ON cl.idLanguage = l.id
+WHERE l.Name = '$langue'";
+$req = $pdo->prepare($query);
+$req->execute();
+$ligne = $req->fetchAll();
+return $ligne;
+}
 // function getCountriesByContinent($continent)
 // {
 //   // pour utiliser la variable globale dans la fonction
