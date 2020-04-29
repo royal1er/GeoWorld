@@ -253,7 +253,7 @@ function inscrire($nom,$prenom,$id,$mdp,$etudiant){
 
 function PaysLangue($langue){
   global $pdo;
-  $query = "SELECT c.Name as PaysName FROM country c INNER JOIN  countrylanguage cl ON c.id = cl.idCountry 
+  $query = "SELECT c.Name as PaysName FROM country c INNER JOIN  countrylanguage cl ON c.id = cl.idCountry
 INNER JOIN language l ON cl.idLanguage = l.id
 WHERE l.Name = '$langue'";
 $req = $pdo->prepare($query);
@@ -264,13 +264,13 @@ return $ligne;
 
 function verifLangue($langue){
   global $pdo;
-$query = "SELECT COUNT(*) as nbpays FROM country c INNER JOIN  countrylanguage cl ON c.id = cl.idCountry 
+$query = "SELECT COUNT(*) as nbpays FROM country c INNER JOIN  countrylanguage cl ON c.id = cl.idCountry
 INNER JOIN language l ON cl.idLanguage = l.id
 WHERE l.Name = '$langue'";
 $req = $pdo->prepare($query);
 $req->execute();
-return $req;
-var_dump($query);
+$ligne = $req->fetchAll();
+return $ligne;
 }
 // function getCountriesByContinent($continent)
 // {
