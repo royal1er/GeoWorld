@@ -22,7 +22,7 @@
   <div class="form-group">
   <label for="exampleInputRole">Role</label>
    <select id="inputState" class="form-control" name="role">
-        <option value="1">Etudiant</option>
+        <option value="1">Collaborateur</option>
         <option value="0">Enseignant</option>
     </select>
   </div>

@@ -142,14 +142,20 @@ function connecter($id,$nom,$prenom){
 
 function getRole($id){
   global $pdo;
-  $query = "SELECT student FROM user Where user.id='.$id.'";
-  $req = $pdo->query($query)->fetchAll();
-  $role = "";
-  if($req == 1){
+  $query = "SELECT student FROM user Where user.id=$id";
+  $prep = $pdo->prepare($query);
+  $prep->execute();
+  $req = $prep->fetchAll();
+  foreach ($req as $req) {
+    $role = $req->student;
+  if($role ==1){
     echo $role = "Collaborateur";
   }else{
     echo $role = "Enseignant";
+    var_dump($prep);
+    var_dump($req);
   }
+}
 }
 
 /**
