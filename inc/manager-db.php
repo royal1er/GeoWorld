@@ -261,6 +261,17 @@ $req->execute();
 $ligne = $req->fetchAll();
 return $ligne;
 }
+
+function verifLangue($langue){
+  global $pdo;
+$query = "SELECT COUNT(*) as nbpays FROM country c INNER JOIN  countrylanguage cl ON c.id = cl.idCountry 
+INNER JOIN language l ON cl.idLanguage = l.id
+WHERE l.Name = '$langue'";
+$req = $pdo->prepare($query);
+$req->execute();
+return $req;
+var_dump($query);
+}
 // function getCountriesByContinent($continent)
 // {
 //   // pour utiliser la variable globale dans la fonction
