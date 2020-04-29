@@ -8,21 +8,16 @@ switch($action){
     include("vues/request.php");
 		break;
 	}
-	case 'afficherequete' :{
-	//Connexion d'un visiteur
-if (isset($_REQUEST["SQL"])){
-			global $pdo;
-      $requete = $_REQUEST['request'];
-			$enseignant = getRequest($requete);
-			if($enseignant==""){
-				ajouterErreur("Vous avez mal saisi la requête");
-				include("vues/v_erreurs.php");
-				// include("vues/v_connexion.php");
-			} else{
-        $_SESSION['enseignant']= $enseignant;
-        include("vues/v_request.php");
-            }
-      }
+	case 'PaysLanguage' :{
+		$langue = $_REQUEST['Langue'];
+		if ($langue != ""){
+			$lesPays = PaysLangue($langue);
+			include('vues/v_request.php');
+		}else {
+			include("vues/erreurReq.php");
+			include('request.php');
+		}
+		
 }
 }
 ?>

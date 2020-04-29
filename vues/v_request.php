@@ -1,14 +1,22 @@
-<?php if(isset($_SESSION['enseignant'])){
-  ?>
+
   <main role="main">
 
     <section class="jumbotron text-center">
       <div class="container">
-        <h1>Conseils</h1>
-        <p class="lead text-muted">var_dump() la variable utilisé pour affiché le contenu ici, affiche les informations structurées d'une variable, y compris son type et sa valeur. Les tableaux et les objets sont explorés récursivement, avec des indentations, pour mettre en valeur leur structure.</p>
+        <h1>Résultat</h1></p>
+         <table class=" table mt-3 shadow-lg p-3 mb-5">
+                          <thead>
+                            <tr class="table bg-dark">
+                                <th scope="col" class="col-4 col-xl-4 col-lg-4 col-md-4 col-sm-4 text-light">Les pays parlant <?php echo $langue;?></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <?php foreach($lesPays as $lesPays) {?>
+                            <tr class="table">
+                              <td><?php echo $lesPays->PaysName ?> </td>
+                            </tr>
+                            <?php } ?>
+                          </tbody>
+                        </table>
       </div>
     </section>
-<?php
-}
-echo var_dump($enseignant);
-?>
