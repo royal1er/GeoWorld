@@ -20,7 +20,7 @@ $id = $_SESSION['idVisiteur'];
                 <p>Bienvenue sur votre compte utilisateur</p>
               </div>
               <div class="col-12 col-lg-4 col-md-6 text-center">
-                <img src="https://robohash.org/68.186.255.198.png" alt="" class="mx-auto rounded-circle img-fluid">
+                <img src=<?php echo "https://robohash.org/".$_SESSION['prenom']?> alt="" class="mx-auto rounded-circle img-fluid shadow-sm">
                 <br>
               </div>
               <div class="col-12 col-lg-4">

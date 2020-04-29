@@ -152,8 +152,6 @@ function getRole($id){
     echo $role = "Collaborateur";
   }else{
     echo $role = "Enseignant";
-    var_dump($prep);
-    var_dump($req);
   }
 }
 }
