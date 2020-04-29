@@ -272,6 +272,16 @@ $req->execute();
 $ligne = $req->fetchAll();
 return $ligne;
 }
+
+function getPaysLifeExpectancySup($percentage){
+  global $pdo;
+  $query ="SELECT c.name as Pays FROM country c WHERE LifeExpectancy >= '$percentage'";
+  $req = $pdo->prepare($query);
+  $req->execute();
+  $ligne = $req->fetchAll();
+  return $ligne;
+}
+
 // function getCountriesByContinent($continent)
 // {
 //   // pour utiliser la variable globale dans la fonction

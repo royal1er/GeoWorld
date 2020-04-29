@@ -35,8 +35,8 @@ $id = $desInfos->id;
       <input type="number" class="form-control"  value="<?php echo $desInfos->Population ?>" name="Population">
     </div>
     <div class="form-group col-md-3">
-      <label for="LifeExpectancy">Espérence de vie (en %)</label>
-      <input type="number" class="form-control" value="<?php echo $desInfos->LifeExpectancy ?>" name="LifeExpectancy">
+      <label for="LifeExpectancy">Espérance de vie (en %)</label>
+      <input type="number" step= "0.1" class="form-control" value="<?php echo $desInfos->LifeExpectancy ?>" name="LifeExpectancy">
     </div>
   </div>
   <div class="form-row p-3">

@@ -19,8 +19,7 @@ switch($action){
 		$prenom = $_REQUEST['prenom'];
 		$role = $_REQUEST['role'];
 		inscrire($nom,$prenom,$login,$mdp,$role);
-		connecter($login, $nom, $prenom);
-		include("accueil.php");
+		// connecter($login, $nom, $prenom);
 		break;
   }
 	case 'valideConnexion' :{
