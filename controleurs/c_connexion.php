@@ -19,7 +19,7 @@ switch($action){
 		$prenom = $_REQUEST['prenom'];
 		$role = $_REQUEST['role'];
 		inscrire($nom,$prenom,$login,$mdp,$role);
-		// connecter($login, $nom, $prenom);
+		include("vues/confirminscription.php");
 		break;
   }
 	case 'valideConnexion' :{
