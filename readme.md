@@ -2,8 +2,7 @@
 
 Contributions most welcome.
 
-![](https://media.giphy.com/media/l0HlCcGHVET4Gpb7a/giphy.gif)
-![](./Capture.jpg)
+![](Capture.jpg)
 
 ## Contents
 
@@ -19,6 +18,7 @@ Contributions most welcome.
 Le projet s'appuie sur une base de donnée recensant les donnée de nombreux pays. Les inscrits ont la possibilités de mettre à jour les données et de réalisé des requêtes personnalisé. Un exemple du site est disponible au lien suivant :  https://sitedemonstrationtest.000webhostapp.com/
 
 ##Participant au projet
+
 [Bardu Aymeric](https://github.com/aymeric131)
 [Allebe Mathys](https://github.com/royal1er)
 
