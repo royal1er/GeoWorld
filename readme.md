@@ -2,7 +2,7 @@
 
 Contributions most welcome.
 
-![](Capture.jpg)
+![](Capture.PNG)
 
 ## Contents
 
