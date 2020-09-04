@@ -2,7 +2,7 @@
 
 Contributions most welcome.
 
-![](Site.PNG)
+![](Site.png)
 ![](Site.PNG)
 
 ## Contents
