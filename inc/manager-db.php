@@ -108,6 +108,21 @@ function getInfosVisiteur($login, $password){
   return $ligne;
 }
 
+function getMdpUser($password){
+  global $pdo;
+  $req = $pdo->prepare("SELECT user.password from user");
+  $req->execute();
+  $lignes = $req->fetchAll();
+  $mdp = "";
+  foreach($lignes as $ligne){
+    $verify = password_verify($password,$ligne->password);
+    if($verify){
+      $mdp = $ligne->password;
+    }
+}
+return $mdp;
+}
+
 function getInfosUserById($id){
   global $pdo;
   $req = $pdo->prepare("select user.name as nom, user.FirstName as prenom, user.login from user
