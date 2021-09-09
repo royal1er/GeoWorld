@@ -82,5 +82,4 @@ if(!isset($_SESSION['nom'])){
   </div>
 <?php
 require_once 'javascripts.php';
-require_once 'footer.php';
 ?>

@@ -17,6 +17,10 @@ include("header.php");
     <div class="carousel-item">
       <img src="images\w_s3.jpg" class="d-block w-100" alt="...">
     </div>
+    <!--Copyright-->
+    <div id="footer-text">
+      <span class="text-copy">SIO SLAM MyWebApp &copy; 2019</span>
+    </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -33,5 +37,4 @@ include("header.php");
   <!-- On affiche la liste des pays par continent si un continent est sélectionner -->
 <?php
 require_once 'javascripts.php';
-require_once 'footer.php';
 ?>

@@ -4,9 +4,8 @@
 <a href="javascript:history.back(1)"><button type="button" class="btn btn-info"><i class="fas fa-undo-alt"></i> Retour</button></a> <i class="fas fa-book-reader"></i>
  </div>
   <?php
-  if(isset($_GET['Name']))
-  {
-
+  if(isset($_GET['Name'])){
+    if(getInfosCountries($_GET['Name'])!= NULL){
     $selectedCountry = $_GET['Name'];
     ?>
     <h1 class=" text-center"><?php echo $selectedCountry ?></h1>
@@ -102,7 +101,10 @@
                         </table>
                       </div>
             <?php
+                  }else{
+                     include('error_pays.php');
                   }
+                }
                       ?>
     </div>
 <?php

@@ -13,6 +13,7 @@ if(!isset($_SESSION)){
 
   <!-- Bootstrap core CSS -->
   <link href="assets/bootstrap-4.2.1-dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/custom.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <link rel="icon" href="assets/world.png" />
@@ -107,8 +108,8 @@ if(!isset($_SESSION)){
     }
       ?>
       </ul>
-      <form class="form-inline my-2 my-lg-0 ">
-        <input  id="search-country" class="form-control mr-sm-2" type="text" placeholder="Rechercher" aria-label="Search">
+      <form class="form-inline my-2 my-lg-0" method="GET" action="infos.php">
+        <input  id="search-country" class="form-control mr-sm-2" type="text" name="Name" placeholder="Rechercher" aria-label="Search">
         <!-- <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button> -->
         <div class="row ml-3 search-bar shadow-lg">
           <div>
