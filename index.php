@@ -1,9 +1,11 @@
 <?php
+include "getRacine.php";
 if(session_id() == ""){
   session_start();
 }
 require_once("inc/manager-db.php");
 require_once ("inc/connect-db.php");
+include("vues/v_modalrss.php");
 include("header.php");
 global $pdo;
 $estConnecte = estConnecte();
@@ -21,12 +23,22 @@ case 'request':{
 case 'update':{
   include("controleurs/c_update.php");break;
 }
+case 'confirmation':{
+  include("controleurs/c_confirmation.php");break;
+}
 }
 if(!isset($_SESSION['nom'])){
   include("accueil.php");
 }
 ?>
-
+<style>
+  body{
+    padding-top: 5rem;
+  }
+  .carousel{
+  margin-top: -2%;
+}
+</style>
 <!-- <main role="main" class="flex-shrink-0"> -->
   <!-- routage vers le controleur connexion -->
   <!-- Slides -->

@@ -16,6 +16,8 @@ if(!isset($_SESSION)){
   <link href="css/custom.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500&display=swap" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="js/jquery-1.2.6.pack.js" type="text/javascript"></script>
+  <script src="js/script.js" type="text/javascript" defer></script>
   <link rel="icon" href="assets/world.png" />
 
 

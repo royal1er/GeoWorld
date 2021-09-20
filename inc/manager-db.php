@@ -309,3 +309,33 @@ function getPaysLifeExpectancySup($percentage){
 //   // var_dump($continent);
 //   return $prep->fetchAll();
 // }
+
+/**
+ * Ajoute le libellé d'une erreur au tableau des erreurs
+
+ * @param $name : le nom de l'utlisateur
+ * @param $firstName : le prénom de l'utlisateur
+ * @param $login : le pseudo de l'utlisateur
+ * @param $password : le mot de passe de l'utlisateur
+ * @param $student : la catégorie d'utilisateur
+ * @param $mail : le mail de l'utilisateur
+ * @param $clé : la clé unique de l'utilisateur
+ */
+function addUtilisateur($name, $firstName, $login, $password, $student, $mail, $clé) {
+  try {
+      global $pdo;
+      $req = $pdo->prepare("insert into user (name, firstName, login, password, student, mail, clé) values(:name, :firstName, :login, :password, :student, :mail, $clé)");
+      $req->bindValue(':name', $name, PDO::PARAM_STR);
+      $req->bindValue(':firstName', $firstName, PDO::PARAM_STR);
+      $req->bindValue(':login', $login, PDO::PARAM_STR);
+      $req->bindValue(':password', $password, PDO::PARAM_STR);
+      $req->bindValue(':student', $student, PDO::PARAM_STR);
+      $req->bindValue(':mail', $mail, PDO::PARAM_STR);
+      
+      $resultat = $req->execute();
+  } catch (PDOException $e) {
+      print "Erreur !: " . $e->getMessage();
+      die();
+  }
+  return $resultat;
+}
