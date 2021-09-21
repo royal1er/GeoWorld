@@ -1,12 +1,10 @@
 <?php
-$a = "manger";
-var_dump($a);
-include("$racine/inc/connect-db.php");
+
 try {
         $cnx = connect();
-        print "Erreur !: ";
+        /*print "connecté !: ";*/
     } catch (PDOException $e) {
-        print "Erreur !: " . $e->getMessage();
+        print "Erreur de connexion à la base de donnée!: " . $e->getMessage();
         die();
     }
 if(isset($_GET['login'],$_GET['cle']) AND !empty($_GET['login']) AND !empty($_GET['cle'])){
@@ -16,10 +14,9 @@ if(isset($_GET['login'],$_GET['cle']) AND !empty($_GET['login']) AND !empty($_GE
     $requser->execute(array($login,$cle));
 
     $userexist = $requser->rowCount();
-    var_dump(userexist);
     if($userexist == 1){
         $user = $requser->fetch();
-        if($user['actif'] == false){
+        if($user->actif == false){
             $updateuser = $cnx->prepare("UPDATE user SET actif = true WHERE login = ? AND clé = ?");
             $updateuser->execute(array($login, $cle));
             echo "Votre compte a été activé ! ";

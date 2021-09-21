@@ -1,9 +1,14 @@
 <?php
-if(!isset($_REQUEST['action'])){
-	$_REQUEST['action'] = 'updateData';
+if(!isset($_REQUEST['task'])){
+	$_REQUEST['task'] = 'updateData';
 }
-$action = $_REQUEST['action'];
-switch($action){
+$task = $_REQUEST['task'];
+switch($task){
+	case 'updateContinent':{
+		$selectedContinent = $_POST['continent'];
+		include("$racine/vues/updatePays.php");
+		break;
+	}
     case 'updateData':{
         $id = $_GET['id'];
         $Région = $_POST['Région'];
@@ -16,7 +21,7 @@ switch($action){
         $HeadOfState = $_POST['HeadOfState'];
         updateInfos($id,$Région,$Superficie,$IndepYear,$Population,$LifeExpectancy,$GNP,$GovernmentForm,$HeadOfState);
         include('accueil.php');
-				break;
+		break;
     }
 		case 'updateUserData':{
         $id = $_GET['id'];
@@ -28,7 +33,7 @@ switch($action){
 				break;
     }
 		case 'updateUser':{
-				include('updateUser.php');
+				include("$racine/vues/updateUser.php");
 				break;
 		}
 		case 'updatePassword':{
@@ -38,8 +43,8 @@ switch($action){
 				foreach ($test as $test) {
 					$desTest = $test->password;
 				if($mdp != $desTest){
-					include('vues/errorUpdate.php');
-					include('changePassword.php');
+					include("$racine/vues/errorUpdate.php");
+					include("$racine/vues/changePassword.php");
 				}else{
 					$newmdp = $_POST['newmdp'];
 					setPassword($id,$newmdp);
@@ -48,6 +53,11 @@ switch($action){
 			}
 				break;
 		}
+		case 'updatePays':{
+			$country = $_POST['country'];
+			include("$racine/vues/updateInfos.php");
+			break;
+	}
 
 
 }

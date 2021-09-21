@@ -1,5 +1,5 @@
 <?php
-include("header.php");
+include("$racine/vues/header.php");
 
 ?>
 <style>
@@ -48,5 +48,5 @@ include("header.php");
   <!-- Fin slides -->
   <!-- On affiche la liste des pays par continent si un continent est sélectionner -->
   <?php
-  require_once 'javascripts.php';
+  require_once 'js/javascripts.php';
   ?>

@@ -22,7 +22,7 @@ if(!isset($_SESSION)){
                   <!-- Bouton -->
                   <div class=" mb-3 row justify-content-center">
                       <div class="collapse" id="Request1">
-                        <form method="POST" name="Language" action="index.php?uc=request&action=PaysLanguage">
+                        <form method="POST" name="Language" action="index.php?action=request&task=PaysLanguage">
                           <div class="form-group">
                             <label for="request1">Langue</label>
                             <input type="text" class="form-control"  name="Langue">
@@ -39,7 +39,7 @@ if(!isset($_SESSION)){
                   <!-- Bouton -->
                   <div class=" mb-3 row justify-content-center">
                       <div class="collapse" id="Request2">
-                        <form  method="POST" name="LifeExpectancy" action="index.php?uc=request&action=PaysLifeExpectancy">
+                        <form  method="POST" name="LifeExpectancy" action="index.php?action=request&task=PaysLifeExpectancy">
                           <div class="form-group">
                             <label for="request1">Pourcentage</label>
                             <input type="number" class="form-control"  name="percentage">
@@ -50,6 +50,6 @@ if(!isset($_SESSION)){
                     </div>
                   
 <?php
-require_once 'javascripts.php';
-require_once 'footer.php';
+require_once 'js/javascripts.php';
+require_once "$racine/vues/footer.php";
 ?>

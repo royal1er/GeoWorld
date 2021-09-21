@@ -23,7 +23,7 @@
 				<p>Nous espérons que ce site vous plaira, Bienvenue à nouveau dans cette aventure !!!</p>
 
 				<p style="display: flex; justify-content: center; margin-top: 10px;"><center>
-					<a href="http://localhost/ppe4/confirmation.php?login={LOGIN}&cle={CLE}" target="_blank" style="border: 1px solid #0561B3; background-color: #238CEA; 
+					<a href="http://localhost/ppe4/index.php?action=confirmation&login={LOGIN}&cle={CLE}" target="_blank" style="border: 1px solid #0561B3; background-color: #238CEA; 
 					color: #fff; text-decoration: none; font-size: 18px; padding: 10px 20px;">Activé votre compte</a></div>
 				</center></p>
 				

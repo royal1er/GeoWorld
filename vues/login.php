@@ -1,12 +1,11 @@
 <?php
-require_once 'header.php';
 if(!isset($_SESSION)){
     session_start();
 }
 ?>
 <div class="container  rounded justify-content-center">
 <div class="row justify-content-center">
-<form class="bg-light p-5 rounded shadow-lg" method="POST" action="index.php?uc=connexion&action=valideConnexion">
+<form class="bg-light p-5 rounded shadow-lg" method="POST" action="index.php?action=connexion&task=valideConnexion">
 <h1>CONNEXION</h1>
   <div class="form-group">
     <label for="exampleInputLogin1">Login</label>
@@ -25,6 +24,6 @@ if(!isset($_SESSION)){
 </div>
 </div>
 <?php
-require_once 'javascripts.php';
-require_once 'footer.php';
+require_once 'js/javascripts.php';
+require_once "$racine/vues/footer.php";
 ?>

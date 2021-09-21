@@ -5,16 +5,11 @@ if (!isset($_REQUEST['task'])) {
 include("getRacine.php");
 $task = $_REQUEST['task'];
 switch ($task) {
-	case 'demandeConnexion': {
-		include("$racine/vues/login.php");
-			break;
-		}
-	case 'deconnexion': {
-			deconnecter();
-			include("$racine/vues/login.php");
-			break;
-		}
-	case 'inscription': {
+    case 'demandeInscription':{
+        include("$racine/vues/register.php");
+        break;
+    }
+	case 'finalInscription': {
 			$inscrit = false;
 			if (
 				isset($_POST["login"]) && isset($_POST["password"]) && isset($_POST["nom"])
@@ -82,33 +77,13 @@ switch ($task) {
 					if (strlen($key) > 2 && trim($key) != "")
 						$message = str_replace($key, $swap_var[$key], $message);
 				}
-				if (mail($destinataire, $sujet, $message, $entete))
+				if (mail($destinataire, $sujet, $message, $entete)){
+					include("accueil.php");
 					include("vues/confirminscription.php");
-				else
-					include("vues/erreurs.php");
+				}else{
+					include("vues/erreurs.php");}
 			}
 			break;
-		}
-	case 'valideConnexion': {
-			//Connexion d'un visiteur
-			if (isset($_REQUEST["connexion"])) {
-				global $pdo;
-				$login = $_REQUEST['login'];
-				$mdp = $_REQUEST['password'];
-				$visiteur = getInfosVisiteur($login, getMdpUser($mdp));
-				if ($visiteur == null) {
-					ajouterErreur("Login ou mot de passe incorrect");
-					include("vues/v_erreurs.php");
-					// include("vues/v_connexion.php");
-				} else {
-					$nom = $visiteur[0]->nom;
-					$prenom = $visiteur[0]->prenom;
-					$id = $visiteur[0]->id;
-					connecter($id, $nom, $prenom);
-					include("accueil.php");
-				}
-				break;
-			}
 		}
 	default: {
 			include("accueil.php");

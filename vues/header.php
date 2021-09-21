@@ -40,7 +40,7 @@ if(!isset($_SESSION)){
 <body class="d-flex flex-column h-100">
 <header>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="accueil.php">GeoWorld</a>
+    <a class="navbar-brand" href="./?action=accueil">GeoWorld</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
             aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -66,7 +66,8 @@ if(!isset($_SESSION)){
             require_once 'inc/manager-db.php';
             $lesContinents = getAllContinents(); // fonction permettant d'obtenir tous les continents
             foreach ($lesContinents as $unContinent){
-            echo '<a class="dropdown-item" href="index.php?Continent='.$unContinent->Continent .'">'. $unContinent->Continent.'</a>';
+            echo '<form method="POST" id="myform" action="index.php?action=lespays&task=afficherpays">
+            <button class="dropdown-item" href="#" name="continent" value="'.$unContinent->Continent.'" type="submit"> '. $unContinent->Continent.'</button></form>';
           };
           ?>
           </div>
@@ -77,16 +78,16 @@ if(!isset($_SESSION)){
         if(empty($_SESSION['nom'])){
           ?>
         <li class="nav-item">
-          <a class="nav-link" href="login">Connexion</a>
+          <a class="nav-link" href="index.php?action=connexion&task=demandeConnexion">Connexion</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="register">Inscription</a>
+          <a class="nav-link" href="index.php?action=inscription&task=demandeInscription">Inscription</a>
         </li>
         <?php
       }
       ?>
         <li class="nav-item">
-          <a class="nav-link " href="todo-projet.php">
+          <a class="nav-link " href="index.php?action=todo&task=project">
             ProjetPPE-SLAM
           </a>
         </li>
@@ -99,10 +100,10 @@ if(!isset($_SESSION)){
               <?php echo "Bienvenue ".$_SESSION['nom']."  ".$_SESSION['prenom']."  "?>
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="v_profil.php">Mon profil</a>
-              <a class="dropdown-item" href="updateContinent.php">Mettre à jour des données</a>
-              <a class="dropdown-item" href="request.php">Mes requêtes</a>
-              <a class="dropdown-item" href="index.php?uc=connexion&action=deconnexion">Déconnecter</a>
+              <a class="dropdown-item" href="index.php?action=account&task=myAccount">Mon profil</a>
+              <a class="dropdown-item" href="index.php?action=account&task=updateData">Mettre à jour des données</a>
+              <a class="dropdown-item" href="index.php?action=account&task=request">Mes requêtes</a>
+              <a class="dropdown-item" href="index.php?action=connexion&task=deconnexion">Déconnecter</a>
             </div>
           </li>
         <?php

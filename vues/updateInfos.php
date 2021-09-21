@@ -1,20 +1,17 @@
 <?php
-require_once 'header.php';
 if(!isset($_SESSION)){
     session_start();
 }
-require_once 'inc/manager-db.php';
-$Country = $_GET['Name'];
-$desInfos = getInfosCountries($Country);
+$desInfos = getInfosCountries($country);
 foreach ($desInfos as $desInfos) {
 $id = $desInfos->id;
     ?>
 <div class="row justify-content-between pl-5">
     <a href="javascript:history.back(1)"><button type="button" class="btn btn-info"><i class="fas fa-undo-alt"></i> Retour</button></a>
 </div>
-    <h1 class=" text-center"><?php echo $Country ?></h1>
+    <h1 class=" text-center"><?php echo $country ?></h1>
 
-<form class="bg-light p-3 m-3 rounded shadow-lg" method="POST" action=<?php echo "index.php?uc=update&action=updateData&id=".$id.""?>>
+<form class="bg-light p-3 m-3 rounded shadow-lg" method="POST" action=<?php echo "index.php?action=update&task=updateData&id=".$id.""?>>
   <div class="form-row p-3">
     <div class="form-group col-md-4">
       <label for="Région">Région</label>
@@ -61,6 +58,6 @@ $id = $desInfos->id;
 }
 ?>
 <?php
-require_once 'javascripts.php';
-require_once 'footer.php';
+require_once 'js/javascripts.php';
+require_once "$racine/vues/footer.php";
 ?>

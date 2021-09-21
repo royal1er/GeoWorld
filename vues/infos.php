@@ -4,9 +4,9 @@
 <a href="javascript:history.back(1)"><button type="button" class="btn btn-info"><i class="fas fa-undo-alt"></i> Retour</button></a> <i class="fas fa-book-reader"></i>
  </div>
   <?php
-  if(isset($_GET['Name'])){
-    if(getInfosCountries($_GET['Name'])!= NULL){
-    $selectedCountry = $_GET['Name'];
+  if(isset($pays)){
+    if(getInfosCountries($pays)!= NULL){
+    $selectedCountry = $pays;
     ?>
     <h1 class=" text-center"><?php echo $selectedCountry ?></h1>
     <?php
@@ -77,7 +77,7 @@
                   <!-- Bouton affichant les villes dans le pays -->
                   <p class=" align-content-center">
                   <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#CitiesView" aria-expanded="false" aria-controls="collapseExample">Afficher / Masquer les villes</button></p>
-                
+
                   <!-- Bouton affichant les villes dans le pays -->
                       <div class="collapse" id="CitiesView">
                         <table class=" table mt-3 shadow-lg p-3 mb-5">
@@ -108,6 +108,6 @@
                       ?>
     </div>
 <?php
-require_once 'javascripts.php';
-require_once 'footer.php';
+require_once 'js/javascripts.php';
+require_once "$racine/vues/footer.php";
 ?>

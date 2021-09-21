@@ -1,11 +1,11 @@
 <?php
-if(!isset($_REQUEST['action'])){
-	$_REQUEST['action'] = 'saisierequete';
+if(!isset($_REQUEST['task'])){
+	$_REQUEST['task'] = 'saisierequete';
 }
-$action = $_REQUEST['action'];
-switch($action){
+$task = $_REQUEST['task'];
+switch($task){
 	case 'saisierequete':{
-    include("vues/request.php");
+    include("$racine/vues/request.php");
 		break;
 	}
 	case 'PaysLifeExpectancy':{
@@ -23,6 +23,11 @@ switch($action){
 		}
 		
 	}
+	case 'infospays':{
+		$pays = $_POST['pays'];
+		include("$racine/vues/infos.php");
+			break;
+		}
 
 	case 'PaysLanguage' :{
 		

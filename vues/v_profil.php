@@ -7,7 +7,7 @@ require_once("inc/manager-db.php");
 require_once("inc/connect-db.php");
 $id = $_SESSION['idVisiteur'];
 ?>
-<form method="POST" action="index.php?uc=update&action=updateUser">
+<form method="POST" action="index.php?action=update&task=updateUser">
   <div class="container">
     <div class="row">
       <div class="col-12">
@@ -25,7 +25,7 @@ $id = $_SESSION['idVisiteur'];
               </div>
               <div class="col-12 col-lg-4">
                 <button class="btn btn-outline-info btn-block"><span class="fa fa-user"></span>Éditez votre profil</button>
-                <a href="./changePassword.php" class="btn btn-outline-danger btn-block"  role="button">Changer mon mot de passe</a>
+                <a href="index.php?action=account&task=password" class="btn btn-outline-danger btn-block"  role="button">Changer mon mot de passe</a>
               </div>
               <!--/col-->
             </div>
@@ -38,6 +38,6 @@ $id = $_SESSION['idVisiteur'];
   </div>
 </form>
 <?php
-require_once 'javascripts.php';
-require_once 'footer.php';
+require_once 'js/javascripts.php';
+require_once "$racine/vues/footer.php";
 ?>

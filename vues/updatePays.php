@@ -1,5 +1,4 @@
 <?php
-require_once 'header.php';
 if(!isset($_SESSION)){
     session_start();
 }
@@ -9,25 +8,24 @@ if(!isset($_SESSION)){
  </div>
 <h2 style="text-align: center;">Séléctionner le pays dont les informations seront modifiées</h2>
 <?php
-    require_once 'inc/manager-db.php';
+    require_once "$racine/inc/manager-db.php";
 ?>
 <div class="container">
     <?php
-        $selectedContinent = $_GET['Continent'];
     
         $desPays = getCountriesByContinent($selectedContinent);
         echo '<div class="row">';
         foreach ($desPays as $desPays) { ?>
 
-        <?php echo '<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-3 ">
-                            <a class="text-light " href="updateInfos.php?Name='.$desPays->Name.'&Continent='.$selectedContinent.'"><button type="button" class="btn btn-info w-100 h-100 shadow p-3 mb-5 rounded-lg">'.$desPays->Name.'</button></a>
-                    </div>';
+        <?php echo '<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-12 mb-3 "><form method="POST" action="index.php?action=update&task=updatePays">
+                            <a class="text-light"><button type="submit" name="country" value="'.$desPays->Name.'" class="btn btn-info w-100 h-100 shadow p-3 mb-5 rounded-lg">'.$desPays->Name.'</button></a>
+                    </form></div>';
     }
     echo '</div>';
 ?>
         </div>
 
 <?php
-require_once 'javascripts.php';
-require_once 'footer.php';
+require_once 'js/javascripts.php';
+require_once "$racine/vues/footer.php";
 ?>

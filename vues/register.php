@@ -1,7 +1,7 @@
 <?php  require_once 'header.php'; ?>
 <div class="container  rounded justify-content-center">
 <div class="row justify-content-center">
-<form class="bg-light p-5 rounded shadow-lg" method="POST" action="index.php?uc=connexion&action=inscription">
+<form class="bg-light p-5 rounded shadow-lg" method="POST" action="index.php?action=inscription&task=finalInscription">
 <h1>INSCRIPTION</h1>
   <div class="form-group">
     <label for="exampleInputName">Nom</label>
@@ -35,6 +35,6 @@
 </div>
 </div>
 <?php
-require_once 'javascripts.php';
-require_once 'footer.php';
+require_once "$racine/js/javascripts.php";
+require_once "$racine/vues/footer.php";
 ?>

@@ -85,6 +85,6 @@
   </div>
 
     <?php
-    require_once 'javascripts.php';
-    require_once 'footer.php';
+    require_once 'js/javascripts.php';
+    require_once "$racine/vues/footer.php";
     ?>

@@ -1,5 +1,5 @@
 <div id="container_pays_error">
-    <img src="globe.jpg">
+    <img src="images/globe.jpg">
     <h2><?php echo $_GET['Name']?> n'existe pas</h2>
 </div>
 <style>
