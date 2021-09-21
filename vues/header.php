@@ -111,7 +111,7 @@ if(!isset($_SESSION)){
     }
       ?>
       </ul>
-      <form class="form-inline my-2 my-lg-0" method="GET" action="infos.php">
+      <form class="form-inline my-2 my-lg-0" method="GET" action="index.php?action=request&task=infospays">
         <input  id="search-country" class="form-control mr-sm-2" type="text" name="Name" placeholder="Rechercher" aria-label="Search">
         <!-- <button class="btn btn-secondary my-2 my-sm-0" type="submit">Rechercher</button> -->
         <div class="row ml-3 search-bar shadow-lg">

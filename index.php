@@ -8,24 +8,6 @@ require_once ("inc/connect-db.php");
 include("$racine/vues/header.php");
 global $pdo;
 $estConnecte = estConnecte();
-/*if(!isset($_REQUEST['uc']) || !$estConnecte){
-   $_REQUEST['uc'] = 'connexion';
-}
-$uc = $_REQUEST['uc'];
-switch($uc){
-case 'connexion':{
-  include("controleurs/c_connexion.php");break;
-}
-case 'request':{
-  include("controleurs/c_request.php");break;
-}
-case 'update':{
-  include("controleurs/c_update.php");break;
-}
-case 'confirmation':{
-  include("controleurs/c_confirmation.php");break;
-}
-}*/
 ?>
 <style>
   body{

@@ -24,7 +24,11 @@ switch($task){
 		
 	}
 	case 'infospays':{
-		$pays = $_POST['pays'];
+		if(!isset($_POST['pays'])){
+			$pays = $_GET['Name'];
+		}else{
+			$pays = $_POST['pays'];
+		}
 		include("$racine/vues/infos.php");
 			break;
 		}

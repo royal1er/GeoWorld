@@ -12,7 +12,7 @@
 
     foreach($prep as $p){
       ?>
-        <div style="margin-top: 20px 0; border-bottom: 2px solid #ccc"><a class="dropdown-item" href="vues/infos.php?Name=<?php echo $p->Name?>"><?php echo $p->Name ?><a></div><?php
+        <div style="margin-top: 20px 0; border-bottom: 2px solid #ccc"><a class="dropdown-item" href="index.php?action=request&task=infospays&Name=<?php echo $p->Name?>"><?php echo $p->Name ?><a></div><?php
     }
 }
   ?>

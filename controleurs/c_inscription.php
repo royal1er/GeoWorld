@@ -3,6 +3,7 @@ if (!isset($_REQUEST['task'])) {
 	$_REQUEST['task'] = 'demandeConnexion';
 }
 include("getRacine.php");
+include("$racine/inc/authentification.php");
 $task = $_REQUEST['task'];
 switch ($task) {
     case 'demandeInscription':{
@@ -23,6 +24,16 @@ switch ($task) {
 					$prenom = $_POST["prenom"];
 					$role = $_POST["role"];
 
+					if(getMail($mail)>=1){
+						$test = getMail($mail);
+						include("$racine/vues/errorMail.php");
+						break;
+					}
+					if(getActif($mail)==0){
+						$test = getActif($mail);
+						include("$racine/vues/errorActif.php");
+						break;
+					}
 					$lenKey = 15;
 					$clé = '';
 					for ($i = 1; $i < $lenKey; $i++) {
@@ -78,15 +89,12 @@ switch ($task) {
 						$message = str_replace($key, $swap_var[$key], $message);
 				}
 				if (mail($destinataire, $sujet, $message, $entete)){
-					include("accueil.php");
 					include("vues/confirminscription.php");
+					include("accueil.php");
+					
 				}else{
 					include("vues/erreurs.php");}
 			}
-			break;
-		}
-	default: {
-			include("accueil.php");
 			break;
 		}
 }
